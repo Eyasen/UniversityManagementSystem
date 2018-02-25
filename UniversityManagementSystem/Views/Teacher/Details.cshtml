@@ -1,0 +1,66 @@
+﻿@model UniversityManagementSystem.Teacher
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Teacher</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TeacherName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TeacherName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TeacherAddress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TeacherAddress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TeacherEmail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TeacherEmail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TeacherMobile)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TeacherMobile)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TeacherAge)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TeacherAge)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TeacherGender)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TeacherGender)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.TeacherId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,40 @@
+﻿@using System.Web.UI.WebControls
+@model IEnumerable<UniversityManagementSystem.Course>
+
+@{
+    ViewBag.Title = "Courses";
+}
+
+<h2>Courses</h2>
+
+<p>
+    @Html.ActionLink("Add New Course information", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CourseName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CourseCode)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CourseName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CourseCode)
+        </td>
+        <td>
+            <button class="btn btn-info" >@Html.ActionLink("Edit", "Edit", new { id = item.CourseId }, new { style = "color: white;" })</button>
+            <button class=" btn btn-primary"> @Html.ActionLink("Details", "Details", new { id = item.CourseId }, new { style = "color: white;" }) </button>
+            <button class="btn btn-warning"> @Html.ActionLink("Delete", "Delete", new { id = item.CourseId }, new { style = "color: white;" })</button>
+</td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,63 @@
+﻿@model IEnumerable<UniversityManagementSystem.Teacher>
+
+@{
+    ViewBag.Title = "Teachers";
+}
+
+<h2>Teachers</h2>
+
+<p>
+    @Html.ActionLink("Add new Teacher information ", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TeacherName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TeacherAddress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TeacherEmail)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TeacherMobile)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TeacherAge)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TeacherGender)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TeacherName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TeacherAddress)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TeacherEmail)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TeacherMobile)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TeacherAge)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TeacherGender)
+        </td>
+        <td>
+            <button class="btn btn-info">@Html.ActionLink("Edit", "Edit", new { id = item.TeacherId }, new { style = "color: white;" })</button>
+            <button class=" btn btn-primary"> @Html.ActionLink("Details", "Details", new { id = item.TeacherId }, new { style = "color: white;" }) </button>
+            <button class="btn btn-warning"> @Html.ActionLink("Delete", "Delete", new { id = item.TeacherId }, new { style = "color: white;" })</button>
+        </td>
+    </tr>
+}
+
+</table>
